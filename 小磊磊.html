@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给小磊磊的惊喜</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffeef0; /* 浅粉色背景 */
+            font-family: "Microsoft YaHei", sans-serif;
+            overflow: hidden;
+        }
+
+        /* 爱心外层容器 */
+        .heart-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            animation: beat 1.2s ease-in-out infinite; /* 跳动动画 */
+        }
+
+        /* 绘制爱心 */
+        .heart {
+            background-color: #ff3838; /* 正红色 */
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            box-shadow: 0 0 40px rgba(255, 56, 56, 0.5);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            background-color: #ff3838;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -100px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 100px;
+            top: 0;
+        }
+
+        /* 中间的文字 */
+        .text-overlay {
+            position: absolute;
+            top: 45%; /* 稍微偏上一点，视觉中心 */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+
+        /* 跳动动画 */
+        @keyframes beat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.25); }
+            60% { transform: scale(1); }
+        }
+
+        /* 背景装饰（漂浮的小爱心） */
+        .bg-text {
+            position: absolute;
+            bottom: 20px;
+            color: #ff9999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="text-overlay">小磊磊大笨蛋</div>
+    </div>
+
+    <div class="bg-text">别看了，说的就是你 ↑</div>
+
+</body>
+</html>
+
